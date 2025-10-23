@@ -9,6 +9,7 @@ import {
   Lock,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type Orden = {
   id: string;
@@ -52,9 +53,9 @@ export default function OrdenDetail({
         <h2 className="text-2xl font-bold text-gray-800">
           Detalle de {orden.id}
         </h2>
-        <a href="/ordenes" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
+        <Link href="/ordenes" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
           ← Volver a la Lista
-        </a>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

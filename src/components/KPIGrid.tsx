@@ -1,6 +1,6 @@
 
 "use client";
-import { Wallet, Handshake, BellRing, Star } from "lucide-react";
+import { Wallet, BellRing, Star } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function KPIGrid() {
