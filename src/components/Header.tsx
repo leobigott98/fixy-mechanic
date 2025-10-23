@@ -1,6 +1,6 @@
 
 "use client";
-import { LifeBuoy } from "lucide-react";
+import { LifeBuoy, Box } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -19,6 +19,11 @@ export default function Header() {
           <span className="text-xl font-extrabold text-blue-600">FIxy</span>
         </div>
         <nav className="flex items-center space-x-4">
+          <button 
+            onClick={() => router.push("/inventario")}
+            className="flex items-center text-gray-600 hover:text-gray-800">
+            <Box className="w-5 h-5 mr-1" /> Inventario
+          </button>
           <button className="flex items-center text-gray-600 hover:text-gray-800">
             <LifeBuoy className="w-5 h-5 mr-1" /> Soporte
           </button>
