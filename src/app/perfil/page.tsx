@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { ArrowLeft, Store, Settings, LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { signOut } from "@/lib/actions";
+
+
 
 export default function PerfilPage() {
   const router = useRouter();
@@ -94,7 +97,9 @@ export default function PerfilPage() {
 
         {/* Logout */}
         <div className="mt-8 pt-4 border-t border-gray-300">
-          <button className="w-full py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition duration-150 shadow-lg flex items-center justify-center">
+          <button 
+            onClick={signOut}
+            className="w-full py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition duration-150 shadow-lg flex items-center justify-center">
             <LogOut className="w-5 h-5 mr-2" /> Cerrar Sesión
           </button>
         </div>
