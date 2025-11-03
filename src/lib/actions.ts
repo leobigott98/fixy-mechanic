@@ -39,21 +39,25 @@ export async function signIn(
 export async function signUp(prevState: SignInState, formData: FormData): Promise<SignInState> {
   const supabase = await createClient();
 
-  const data = {
+  const credentials = {
     email: formData.get("email") as string,
     password: formData.get("password") as string,
+    passwordConfirmation: formData.get("passwordConfirmation") as string,
   };
 
   //  Basic field validation
-  if (!data.email || !data.password) {
+  if (!credentials.email || !credentials.password || !credentials.passwordConfirmation) {
     return { error: "Por favor, complete todos los campos" };
   }
 
-  const { error } = await supabase.auth.signInWithPassword(data);
+  const { data, error } = await supabase.auth.signUp(credentials);
 
   if (error) {
     console.log("Sign in error:", error.message);
     return { error: "Credenciales inválidas." };
+  } else if (data.user && data.user.identities && data.user.identities.length === 0) {
+    // User already exists
+    return { error: "El usuario ya existe. Por favor, inicie sesión." };
   }
 
   // On success, redirect

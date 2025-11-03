@@ -4,6 +4,7 @@ import { useState, useActionState } from "react";
 import { useRouter } from "next/navigation";
 import { UserPlus, Wrench } from "lucide-react";
 import { signUp } from "@/lib/actions";
+import clsx from "clsx";
 
 const initialState = { error: null, loading: false };
 
@@ -36,6 +37,8 @@ export default function SignUpPage() {
             </label>
             <input
               type="email"
+              id="email"
+              name="email"
               className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
               placeholder="ejemplo@fixy.com"
               value={email}
@@ -50,6 +53,8 @@ export default function SignUpPage() {
             </label>
             <input
               type="password"
+              id="password"
+              name="password"
               className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
               placeholder="********"
               value={password}
@@ -64,12 +69,20 @@ export default function SignUpPage() {
             </label>
             <input
               type="password"
-              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              id="passwordConfirmation"
+              name="passwordConfirmation"
+              className={clsx("w-full p-3 mt-1 border border-gray-300 rounded-lg", confirm === password? "focus:ring-blue-500 focus:border-blue-500" : "outline-red-500")}
               placeholder="********"
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
               required
             />
+            {password ? (
+              <p className={clsx("text-sm mt-1", confirm === password ? "text-green-600" : "text-red-600")}>
+              {(confirm === password)? "Las contraseñas coinciden" : "Las contraseñas no coinciden"}
+            </p>
+            ) : <></>}
+            
           </div>
 
           {state?.error && <p className="text-red-600 text-sm">{state.error}</p>}
