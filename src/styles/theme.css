@@ -1,0 +1,56 @@
+/* Base tokens used across the whole app */
+:root {
+  --bg: 0 0% 98%;
+  --fg: 222 47% 11%;
+
+  --card: 0 0% 100%;
+  --card-fg: 222 47% 11%;
+
+  --muted: 210 40% 96%;
+  --muted-fg: 215 16% 47%;
+
+  --border: 214 32% 91%;
+
+  /* Brand (Fixy blue default) */
+  --brand: 221 83% 53%;
+  --brand-2: 224 76% 48%;
+  --brand-fg: 0 0% 100%;
+
+  --ring: 221 83% 53%;
+}
+
+/* Theme presets: switch by setting <html data-theme="..."> */
+html[data-theme="fixy-blue"] {
+  --brand: 221 83% 53%;
+  --brand-2: 224 76% 48%;
+  --ring: 221 83% 53%;
+}
+
+html[data-theme="teal"] {
+  --brand: 173 80% 40%;
+  --brand-2: 173 75% 34%;
+  --ring: 173 80% 40%;
+}
+
+html[data-theme="purple"] {
+  --brand: 262 83% 58%;
+  --brand-2: 262 71% 50%;
+  --ring: 262 83% 58%;
+}
+
+html[data-theme="orange"] {
+  --brand: 24 94% 50%;
+  --brand-2: 20 90% 48%;
+  --ring: 24 94% 50%;
+}
+
+/* Optional dark mode (for later) */
+html.dark {
+  --bg: 222 47% 7%;
+  --fg: 210 40% 98%;
+  --card: 222 47% 11%;
+  --card-fg: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-fg: 215 20% 65%;
+  --border: 217 33% 17%;
+}
