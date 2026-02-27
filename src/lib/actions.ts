@@ -33,7 +33,7 @@ export async function signIn(
   }
 
   // On success, redirect
-  redirect("/dashboard");
+  redirect("/app/dashboard");
 }
 
 export async function signUp(prevState: SignInState, formData: FormData): Promise<SignInState> {
