@@ -43,7 +43,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
       {/* Content */}
       <div className="lg:pl-[280px]">
         <AppTopbar onOpenSidebar={() => setOpen(true)} />
-        <main className="px-4 sm:px-6 lg:px-8 py-6">{children}</main>
+        <main className="px-4 sm:px-6 lg:px-0 py-6">{children}</main>
       </div>
     </div>
   );

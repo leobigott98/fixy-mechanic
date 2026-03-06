@@ -1,6 +1,6 @@
 "use client";
 
-import { Wallet, ClipboardList, BellRing, Star } from "lucide-react";
+import { Wallet, ClipboardList, BellRing, Star, Car } from "lucide-react";
 
 const cards = [
   { label: "Ingresos App", value: "$1,580", meta: "+12% vs mes anterior", icon: Wallet },
@@ -11,7 +11,7 @@ const cards = [
 
 export default function AppStatCards() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-4 gap-4">
       {cards.map((c) => {
         const Icon = c.icon;
         return (

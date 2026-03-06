@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <ThemeScript />
         </head>
         <main
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 py-8"
         >
           {children}
           <Analytics />
